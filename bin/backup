@@ -1,3 +1,5 @@
 #!/bin/bash
 
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 rsync -avzr --delete --include-from=/tmp/backup/.backup-files.txt ~/ /tmp/backup && cd /tmp/backup && git add . && git commit -m "Saved" && git push -u origin master
